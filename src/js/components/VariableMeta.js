@@ -2,6 +2,7 @@ import React from 'react';
 import dispatcher from './../helpers/dispatcher';
 
 import CopyToClipboard from './CopyToClipboard';
+import CustomButton from './CustomButton';
 import { toType } from './../helpers/util';
 
 //icons
@@ -114,7 +115,9 @@ export default class extends React.PureComponent {
             enableClipboard,
             src,
             namespace,
-            rowHovered
+            rowHovered,
+            name,
+            customButtons
         } = this.props;
         return (
             <div
@@ -133,6 +136,13 @@ export default class extends React.PureComponent {
                         clickCallback={enableClipboard}
                         {...{ src, theme, namespace }}
                     />
+                ) : null}
+                {customButtons[name] ? (
+                    <CustomButton
+                    rowHovered={rowHovered}
+                    {...customButtons[name]}
+                    {...{ src, theme, namespace }}
+                />
                 ) : null}
                 {/* copy add/remove icons */}
                 {onAdd !== false ? this.getAddAttribute(rowHovered) : null}

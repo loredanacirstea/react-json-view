@@ -101,7 +101,7 @@ export default class extends React.PureComponent {
                 title="Copy to clipboard"
                 style={{
                     verticalAlign: 'top',
-                    display: rowHovered ? 'inline-block' : 'none'
+                    display: 'inline-block'
                 }}
             >
                 <span

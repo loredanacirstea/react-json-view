@@ -266,6 +266,28 @@ export class CheckCircle extends React.PureComponent {
     }
 }
 
+export class CustomIcon extends React.PureComponent {
+    render() {
+        const { props } = this;
+        const { style, path, viewBox} = props;
+
+        return (
+            <span>
+                <svg
+                    {...getIconStyle(style)}
+                    viewBox={viewBox ? viewBox : "0 0 24 24"}
+                    fill="currentColor"
+                    preserveAspectRatio="xMidYMid meet"
+                >
+                    <g>
+                    {path}
+                    </g>
+                </svg>
+            </span>
+        );
+    }
+}
+
 function getIconStyle(style) {
     if (!style) {
         style = {};
