@@ -212,7 +212,15 @@ function getExampleJson1() {
         string_number: '1234',
         date: new Date(),
         moment: Moment(),
-        regexp: /[0-9]/gi
+        regexp: /[0-9]/gi,
+        jsonConfig: {actions: [
+            {
+                type: 'button',
+                title: 'debug',
+                icon: 'Eth',
+                clickCallback: (v) => console.log('DEBUG here', v),
+            }
+        ]}
     };
 }
 

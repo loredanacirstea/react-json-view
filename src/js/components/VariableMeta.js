@@ -119,6 +119,7 @@ export default class extends React.PureComponent {
             name,
             customButtons
         } = this.props;
+        const {actions = []} = src.jsonConfig || {};
         return (
             <div
                 {...Theme(theme, 'object-meta-data')}
@@ -144,6 +145,13 @@ export default class extends React.PureComponent {
                     {...{ src, theme, namespace }}
                 />
                 ) : null}
+                {actions.filter(v => v.type === 'button').map(v => {
+                    return (<CustomButton
+                        rowHovered={rowHovered}
+                        {...v}
+                        {...{ src, theme, namespace }}
+                    />)
+                })}
                 {/* copy add/remove icons */}
                 {onAdd !== false ? this.getAddAttribute(rowHovered) : null}
                 {onDelete !== false ? this.getRemoveObject(rowHovered) : null}

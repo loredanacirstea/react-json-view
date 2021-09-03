@@ -3,6 +3,7 @@ import React from 'react';
 import { toType } from './../helpers/util';
 
 //clibboard icon
+import * as icons from './icons';
 import { CustomIcon } from './icons';
 
 //theme
@@ -14,21 +15,22 @@ export default class extends React.PureComponent {
     }
 
     handleClick = () => {
-        
-        const { clickCallback, src, namespace } = this.props;
 
+        const { clickCallback, src, namespace } = this.props;
+        const obj = {...src};
+        delete obj.jsonConfig;
 
         clickCallback({
-            src: src,
+            src: obj,
             namespace: namespace,
             name: namespace[namespace.length - 1]
         });
     };
 
     getClippyIcon = () => {
-        const { theme} = this.props;
-
-        return <CustomIcon class="copy-icon" {...this.props} {...Theme(theme, 'copy-icon')} />;
+        const { theme, icon} = this.props;
+        const Elem = icons[icon] ? icons[icon] : CustomIcon;
+        return <Elem class="copy-icon" {...this.props} {...Theme(theme, 'copy-icon')} />;
     };
 
     render() {
