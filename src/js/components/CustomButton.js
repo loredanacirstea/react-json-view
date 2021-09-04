@@ -18,7 +18,7 @@ export default class extends React.PureComponent {
 
         const { clickCallback, src, namespace } = this.props;
         const obj = {...src};
-        delete obj.jsonConfig;
+        delete obj.rowConfig;
 
         clickCallback({
             src: obj,

@@ -213,7 +213,7 @@ function getExampleJson1() {
         date: new Date(),
         moment: Moment(),
         regexp: /[0-9]/gi,
-        jsonConfig: {actions: [
+        rowConfig: {actions: [
             {
                 type: 'button',
                 title: 'debug',

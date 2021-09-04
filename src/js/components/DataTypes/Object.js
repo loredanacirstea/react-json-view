@@ -254,8 +254,8 @@ class RjvObject extends React.PureComponent {
         }
 
         keys.forEach(name => {
-            if (name === 'jsonConfig') return;
             variable = new JsonVariable(name, variables[name]);
+            if (name === 'rowConfig') return;
 
             if (parent_type === 'array_group' && index_offset) {
                 variable.name = parseInt(variable.name) + index_offset;

@@ -119,7 +119,7 @@ export default class extends React.PureComponent {
             name,
             customButtons
         } = this.props;
-        const {actions = []} = src.jsonConfig || {};
+        const {actions = []} = src.rowConfig || {};
         return (
             <div
                 {...Theme(theme, 'object-meta-data')}
