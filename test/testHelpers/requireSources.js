@@ -2,7 +2,7 @@ import register from 'ignore-styles';
 register(['.sass', '.scss']);
 import './../../src/js/index';
 
-import Adapter from 'enzyme-adapter-react-16';
+// import Adapter from 'enzyme-adapter-react-16';
 import { configure } from 'enzyme';
 import jsdom from 'jsdom';
 
@@ -29,4 +29,4 @@ function copyProps(src, target) {
 
 setUpDomEnvironment();
 
-configure({ adapter: new Adapter() });
+// configure({ adapter: new Adapter() });

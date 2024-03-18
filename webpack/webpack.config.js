@@ -53,7 +53,7 @@ const config = {
         include: [PATHS.js]
       }
     ]
-  }
+  },
 }
 
 module.exports = config
